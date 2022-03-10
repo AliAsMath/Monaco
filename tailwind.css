@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Abril Fatface", cursive;
+    src: url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+  }
+  @font-face {
+    font-family: "iranyekan";
+    src: url("/font/iranyekanwebregular.e31c09af.woff2");
+  }
+  @font-face {
+    font-family: "takhte";
+    src: url("/font/Mj_Takhteh.ttf");
+  }
+  body {
+    overflow: overlay;
+  }
+}
+
+@layer components {
+  .shape {
+    border-radius: "70% 30% 30% 70% / 60% 40% 60% 40%";
+  }
+  .text-shadow {
+    text-shadow: 2px 2px 8px #000;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 100vw;
+    background: #cfb04577;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
