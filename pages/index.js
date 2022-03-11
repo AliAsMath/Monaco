@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex-col w-screen min-h-screen pt-10 bg-monako-2">
-      <div className="flex justify-end pr-16 animate-tranDTU ">
-        <h1 className="pt-8 font-bold text-monako-5 text-shadow text-9xl font-Takhte">
+    <div className="flex flex-col items-center w-screen min-h-screen sm:pt-16 justify-evenly bg-monako-2">
+      <div className="px-10  sm:self-end animate-tranDTU">
+        <h1 className="font-bold text-monako-5 text-shadow sm:text-9xl text-8xl font-Takhte">
           موناکو
         </h1>
       </div>
 
-      <div className="flex justify-center animate-show -z-10">
+      <div className=" animate-show">
         <Image
           priority
           src={"/image/Wristwatch-bro.png"}
@@ -19,7 +19,7 @@ export default function Home() {
         />
       </div>
 
-      <h1 className="pb-5 pl-20 font-bold text-shadow animate-tranUTD text-monako-5 text-8xl font-abril">
+      <h1 className="px-10 text-7xl font-bold  sm:self-start text-shadow animate-tranUTD text-monako-5 sm:text-8xl font-abril">
         Monako
       </h1>
     </div>

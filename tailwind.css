@@ -27,18 +27,4 @@
   .text-shadow {
     text-shadow: 2px 2px 8px #000;
   }
-
-  ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 100vw;
-    background: #cfb04577;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
 }

@@ -6,7 +6,7 @@ const Login = () => {
 
   return (
     <section className="flex flex-col items-center justify-center h-screen text-sm font-Yekan text-stone-500 bg-monako-white">
-      <div className="flex mb-3 text-lg text-monako-2">
+      <div className="flex gap-3 mb-3 text-lg text-monako-2">
         <h3
           className={
             "cursor-pointer hover:text-monako-3 " +
@@ -16,7 +16,7 @@ const Login = () => {
         >
           ثبت نام
         </h3>
-        <p className="mx-3">/</p>
+        /
         <h3
           className={
             "cursor-pointer hover:text-monako-3 " +
@@ -27,7 +27,7 @@ const Login = () => {
           ورود
         </h3>
       </div>
-      <div className="w-1/3 h-1/2">
+      <div className="sm:w-1/3 w-5/6 ">
         <Form inputType={inputType} setInputType={setInputType} />
       </div>
     </section>
