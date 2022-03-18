@@ -5,7 +5,7 @@ import { ImLocation2 } from "react-icons/im";
 
 const AboutUs = () => {
   return (
-    <section className="h-screen p-10 md:pt-24 pt-10 text-sm md:text-xl min-h-min font-Yekan bg-monako-2">
+    <section className="h-screen p-10 pt-1 text-sm md:pt-24 md:text-xl min-h-min font-Yekan bg-monako-2">
       <AnimationOnScroll
         className="flex flex-wrap-reverse items-center justify-around w-full h-full "
         animateIn="animate__backInDown"

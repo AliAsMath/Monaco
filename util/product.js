@@ -1,6 +1,5 @@
 const DB = require("./database");
 const db = new DB();
-
 class Product {
   constructor(data) {
     this.data = data;

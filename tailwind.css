@@ -27,4 +27,20 @@
   .text-shadow {
     text-shadow: 2px 2px 8px #000;
   }
+
+  @media screen and (min-width: 480px) {
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #000;
+      border-radius: 5px;
+    }
+  }
 }

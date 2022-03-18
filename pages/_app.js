@@ -1,13 +1,19 @@
 import "../styles/styles.css";
-import Header from "./../components/Header";
+import Header from "./../components/header/Header";
+import { Provider } from "react-redux";
+import store from "./../redux/store";
+import { SessionProvider } from "next-auth/react";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   return (
-    <>
-      <Header />
-      <Component {...pageProps} />
-    </>
+    <SessionProvider session={session}>
+      <Provider store={store}>
+        <Header />
+        <Component {...pageProps} />
+      </Provider>
+    </SessionProvider>
   );
 }
-
-export default MyApp;
