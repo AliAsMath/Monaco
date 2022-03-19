@@ -5,7 +5,7 @@ import { ObjectId } from "mongodb";
 import Plus from "../../../public/svg/plus-svgrepo-com (2).svg";
 import Minus from "../../../public/svg/minus-svgrepo-com.svg";
 import Buy from "../../../public/svg/buy-svgrepo-com.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { basketActions } from "../../../redux/basket-store";
 import store from "../../../redux/store";
 
@@ -19,26 +19,21 @@ const Product = ({ product }) => {
     dispach(basketActions.add({ ...product, quantity }));
 
     const basket = store.getState().basket;
-
-    const response = await fetch("/api/basket/update", {
-      method: "PUT",
-      body: JSON.stringify({ basket }),
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+    localStorage.setItem("basket", JSON.stringify(basket));
   };
 
   return (
-    <div className="flex items-center justify-center w-screen min-h-screen pt-20 pb-10 text-2xl select-none bg-monako-2">
-      <Image
-        className="object-cover rounded-lg "
-        src={imageUrl}
-        height={400}
-        width={400}
-        alt={model + description}
-      />
-      <div className="flex flex-col items-center w-1/3 gap-3 font-abril bg-monako-1 text-monako-5 h-96 ">
+    <div className="flex flex-col items-center justify-center w-screen min-h-screen gap-0 pt-20 pb-10 text-2xl select-none sm:flex-row bg-monako-2">
+      <div className="sm:w-[400px]  w-10/12 flex justify-center items-end">
+        <Image
+          className="object-cover rounded-lg "
+          src={imageUrl}
+          height={400}
+          width={400}
+          alt={model + description}
+        />
+      </div>
+      <div className="flex flex-col items-center w-9/12 gap-3 sm:max-w-none max-w-[400px] sm:w-1/3 font-abril bg-monako-1 text-monako-5 h-96 ">
         <h2>{model}</h2>
         <h3>{price.toLocaleString("en-US")}</h3>
         <p className="w-full px-2 text-base text-right font-Yekan">

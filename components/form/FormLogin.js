@@ -29,7 +29,7 @@ const FormLogin = () => {
   return (
     <form
       onSubmit={submitHandler}
-      className="flex flex-col gap-6 px-8 py-5 rounded-lg shadow-2xl justify-evenly shadow-monako-1 bg-monako-white "
+      className="flex flex-col gap-6 px-8 py-5 rounded-lg shadow-2xl font-Yekan justify-evenly shadow-monako-1 bg-monako-white "
     >
       <FormInput ref={emailRef} name="email" type="email" placeholder="ایمیل" />
       <FormInput
@@ -38,17 +38,19 @@ const FormLogin = () => {
         type="password"
         placeholder="رمز عبور"
       />
-      <Button type="submit" variant="contained" className="mx-3 bg-blue-700">
+      <button
+        type="submit"
+        className="py-2 mx-3 bg-blue-700 rounded hover:bg-blue-600 text-monako-white"
+      >
         ورود
-      </Button>
+      </button>
 
-      <Button
-        variant="outlined"
-        className="mx-3 "
+      <button
+        className="py-2 mx-3 border-[1px] border-blue-700 rounded hover:bg-blue-50 text-blue-700"
         onClick={() => router.push("/auth/forget")}
       >
         رمز عبور را فراموش کرده‌ام
-      </Button>
+      </button>
     </form>
   );
 };

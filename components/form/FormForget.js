@@ -3,11 +3,14 @@ import { Button } from "@mui/material";
 
 const FormForget = () => {
   return (
-    <form className="flex gap-6 flex-col justify-evenly  px-8 py-5 rounded-lg shadow-2xl shadow-monako-1 bg-monako-white ">
+    <form className="flex flex-col gap-6 px-8 py-5 rounded-lg shadow-2xl justify-evenly shadow-monako-1 bg-monako-white ">
       <FormInput name="email" type="email" placeholder="ایمیل" />
-      <Button variant="contained" className="bg-blue-700 mx-3">
+      <button
+        type="submit"
+        className="py-2 mx-3 bg-blue-700 rounded hover:bg-blue-600 text-monako-white"
+      >
         ارسال
-      </Button>
+      </button>
     </form>
   );
 };

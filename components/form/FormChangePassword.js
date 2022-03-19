@@ -37,7 +37,7 @@ const FormChangePassword = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex items-center justify-center h-screen bg-monako-white">
       <form
         onSubmit={submitHandler}
         className="flex flex-col gap-6 px-8 py-5 rounded-lg shadow-2xl justify-evenly shadow-monako-1 bg-monako-white "
@@ -54,9 +54,12 @@ const FormChangePassword = () => {
           type="password"
           placeholder="تکرار رمز عبور"
         />
-        <Button type="submit" variant="contained" className="mx-3 bg-blue-700">
+        <button
+          type="submit"
+          className="py-2 mx-3 bg-blue-700 rounded hover:bg-blue-600 text-monako-white"
+        >
           تغییر
-        </Button>
+        </button>
       </form>
     </div>
   );

@@ -27,7 +27,7 @@ const ProfileMenu = ({ setShowComponent, showComponent }) => {
   return (
     <menu
       className={
-        " h-screen p-2 pt-14 transition-all bg-monako-1 " +
+        " fixed right-0 h-screen p-2 top-14 transition-all bg-monako-1 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60   " +
         (isExpand ? "w-1/4" : "w-9")
       }
     >

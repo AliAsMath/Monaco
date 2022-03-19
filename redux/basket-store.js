@@ -21,8 +21,33 @@ const basketSlice = createSlice({
       return state;
     },
 
+    inc(state, action) {
+      state.forEach((product) => {
+        if (product._id === action.payload) {
+          product.quantity++;
+        }
+      });
+
+      localStorage.setItem("basket", JSON.stringify(state));
+
+      return state;
+    },
+
+    dec(state, action) {
+      state.forEach((product) => {
+        if (product._id === action.payload) product.quantity--;
+      });
+
+      localStorage.setItem("basket", JSON.stringify(state));
+
+      return state;
+    },
+
     remove(state, action) {
-      state.filter((product) => product._id !== action.payload._id);
+      state = state.filter((product) => product._id !== action.payload);
+
+      localStorage.setItem("basket", JSON.stringify(state));
+
       return state;
     },
 

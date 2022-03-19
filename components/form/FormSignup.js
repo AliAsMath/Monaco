@@ -66,9 +66,12 @@ const FormSignup = () => {
         type="password"
         placeholder="تکرار رمز عبور"
       />
-      <Button type="submit" variant="contained" className="mx-3 bg-blue-700">
+      <button
+        type="submit"
+        className="py-2 mx-3 bg-blue-700 rounded hover:bg-blue-600 text-monako-white"
+      >
         ورود
-      </Button>
+      </button>
     </form>
   );
 };
