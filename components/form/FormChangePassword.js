@@ -1,6 +1,7 @@
 import FormInput from "./FormInput";
-import { Button } from "@mui/material";
 import { useRef } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const reqToChangePass = async ({ repassword, password }) => {
   const response = await fetch("/api/user/change-password", {
@@ -28,16 +29,15 @@ const FormChangePassword = () => {
     const password = passwordRef.current.value();
     const repassword = repasswordRef.current.value();
 
-    try {
-      const result = await reqToChangePass({ password, repassword });
-      console.log(result);
-    } catch (err) {
-      console.log(err);
-    }
+    toast.promise(async () => await reqToChangePass({ password, repassword }), {
+      pending: "در حال بررسی",
+      success: "رمز عبور با موفقیت تغییر کرد",
+      error: "خطا در تغییر رمز عبور. لطفا رمز عبور را صحیح وارد کنید",
+    });
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-monako-white">
+    <div className="flex items-center justify-center w-screen h-screen bg-monako-white">
       <form
         onSubmit={submitHandler}
         className="flex flex-col gap-6 px-8 py-5 rounded-lg shadow-2xl justify-evenly shadow-monako-1 bg-monako-white "
@@ -61,6 +61,19 @@ const FormChangePassword = () => {
           تغییر
         </button>
       </form>
+      <ToastContainer
+        className="text-xs translate-y-16 sm:text-base sm:translate-y-10 h-fit w-fit font-Yekan"
+        position="top-right"
+        hideProgressBar={false}
+        autoClose={5000}
+        newestOnTop={false}
+        closeOnClick
+        rtl={true}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };

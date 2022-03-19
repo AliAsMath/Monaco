@@ -4,14 +4,15 @@ import { hash } from "bcryptjs";
 const handler = async (req, res) => {
   if (req.method !== "POST") return;
 
-  const { email, password } = req.body;
+  const { email, password, repassword } = req.body;
   console.log(email, password);
 
   if (
     !email ||
     !email.includes("@") ||
     !password ||
-    password.trim().length < 7
+    password.trim().length < 7 ||
+    password !== repassword
   ) {
     res.status(422).json({ message: "Invalid email or password!" });
     return;

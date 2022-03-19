@@ -8,6 +8,8 @@ import Buy from "../../../public/svg/buy-svgrepo-com.svg";
 import { useDispatch } from "react-redux";
 import { basketActions } from "../../../redux/basket-store";
 import store from "../../../redux/store";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Product = ({ product }) => {
   const { _id, model, price, description, imageUrl } = product;
@@ -20,6 +22,7 @@ const Product = ({ product }) => {
 
     const basket = store.getState().basket;
     localStorage.setItem("basket", JSON.stringify(basket));
+    toast.success("محصول به سبد خرید اضافه شد");
   };
 
   return (
@@ -57,6 +60,19 @@ const Product = ({ product }) => {
           />
         </div>
       </div>
+      <ToastContainer
+        className="text-base translate-y-16 sm:translate-y-10 h-fit w-fit font-Yekan"
+        position="top-right"
+        hideProgressBar={false}
+        autoClose={5000}
+        newestOnTop={false}
+        closeOnClick
+        rtl={true}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };
