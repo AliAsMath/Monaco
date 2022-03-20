@@ -6,14 +6,15 @@ const GroupProduct = ({ products }) => {
     <div className="pt-[52px]  bg-monako-2">
       <div className="fixed z-10 w-screen">
         <h1 className="w-11/12 pt-2 mx-auto mb-2 text-xl text-right border-b-2 bg-monako-2 text-monako-4 border-monako-4 font-Yekan">
-          {products[0].group}
+          {products && products[0].group}
         </h1>
       </div>
       <div className="flex justify-center w-screen p-12 ">
         <div className="flex flex-wrap justify-center w-11/12 gap-10">
-          {products.map((product) => (
-            <ProductCard key={product._id} {...product} />
-          ))}
+          {products &&
+            products.map((product) => (
+              <ProductCard key={product._id} {...product} />
+            ))}
         </div>
       </div>
     </div>
@@ -46,7 +47,7 @@ export async function getStaticProps(context) {
 
   return {
     props: { products },
-    revalidate: 60,
+    revalidate: 120,
   };
 }
 
